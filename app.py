@@ -2,6 +2,7 @@ import os
 import json
 from flask import Flask, request, jsonify
 from telebot import TeleBot, types
+from flask_cors import CORS
 
 BOT_TOKEN = "8133185900:AAHVHTArbMIGbiQi6QKy2cvJArm9Vti8InU"
 SUPER_ADMIN_ID = 5899057322
@@ -9,6 +10,7 @@ SUPER_ADMIN_ID = 5899057322
 # Bot obyektini yaratish
 bot = TeleBot(BOT_TOKEN)
 app = Flask(__name__)
+CORS(app)
 
 # Til matnlari (soddalashtirilgan, texts.py faylini import qilish shart emas)
 TEXTS = {
